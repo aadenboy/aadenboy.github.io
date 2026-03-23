@@ -1,0 +1,151 @@
+/* this is from a different project ZZZZZZ */
+html {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, #091525, #0f3a48, #091525);
+  color: #fff;
+  width: 100vw;
+  height: 100vh;
+}
+body {
+  margin: 0;
+  padding: 0.5em;
+}
+a {
+  color: #fff;
+  text-decoration: underline;
+  &:hover, &:focus {
+    color: #aaf;
+  }
+  &:visited {
+    color: #fcf;
+  }
+  &:visited:hover, &:visited:focus {
+    color: #fcc
+  }
+  &:active, &:visited:active {
+    color: #88f;
+  }
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+  background: linear-gradient(to right, #365781, #126d8c);
+}
+nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 1em;
+}
+nav li {
+  display: flex;
+  gap: 1em;
+  list-style: none;
+}
+
+footer {
+  margin-top: 1em;
+  padding: 1em;
+  background: linear-gradient(to right, #365781, #126d8c);
+}
+
+input {
+  background: #000;
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 0.5em;
+  border-radius: 6px;
+  margin-right: 0.5em;
+  font-size: inherit;
+  &:disabled {
+    background: #555;
+    color: #aaa;
+    border: 1px solid #aaa;
+  }
+}
+button {
+  background: #fff;
+  color: #000;
+  border: 1px solid #000;
+  padding: 0.5em;
+  padding-bottom: calc(0.5em + 2px);
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: inset 0 -2px 1px 0 #555;
+  font-size: inherit;
+  &:hover, &:focus {
+    background: #eee;
+  }
+  &:active {
+    background: #ccc;
+    box-shadow: inset 0 2px 1px 0 #555;
+    padding-top: calc(0.5em + 2px);
+    padding-bottom: 0.5em;
+  }
+  &:disabled {
+    background: #aaa;
+    color: #555;
+    cursor: not-allowed;
+  }
+}
+.field {
+  display: flex;
+  justify-content: center;
+  margin: 1em;
+}
+.result {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin: 1em;
+}
+
+table.mult {
+  border-collapse: collapse;
+  margin: 1em auto;
+  td {
+    padding: 0 0.5em;
+    text-align: center
+  }
+}
+
+/*
+mjx-container {
+  border: 1px solid #f00;
+  background-color: #f005;
+}
+mjx-container mjx-c {
+  border: 1px solid #0f0;
+  background-color: #0f05;
+}
+mjx-container :not(mjx-c) {
+  border: 1px solid #00f;
+  background-color: #00f5;
+  padding: 2px;
+}
+*/
+mjx-container {
+  max-width: 75vw;
+}
+
+#debug {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: #f00;
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 0.5em;
+  font-family: monospace;
+  font-size: 12px;
+  max-height: 50vh;
+  overflow-y: scroll;
+}
