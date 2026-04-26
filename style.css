@@ -1,7 +1,7 @@
 html, body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 16px;
-  background: url("/commonbg.png");
+  background: url("./bg.png");
   background-size: contain;
   display: flex;
   justify-content: center;
@@ -125,4 +125,99 @@ dialog h2, dialog p {
 #what {
   width: min-content;
   float: right;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1em 0;
+  overflow-x: scroll;
+}
+th, td {
+  border: 1px solid #fff;
+  padding: 0.5em;
+  text-align: left;
+}
+td {
+  background-color: #63a1a044;
+}
+tr:nth-child(even) td {
+  background-color: #63a1a022;
+}
+th {
+  background-color: #8ed2d144;
+}
+tr:nth-child(even) th {
+  background-color: #8ed2d122;
+}
+canvas {
+  background: #fff;
+}
+td img, th img {
+  max-width: 450px;
+  max-height: 450px;
+}
+.response-links {
+  font-size: 0.8em;
+  font-style: italic;
+  margin-top: 1em;
+  opacity: 0.8;
+}
+
+main:has(#table-specifically-the-response-one) {
+  width: 75vw;
+}
+#table-specifically-the-response-one pre {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  white-space: pre-wrap;
+  margin: 0;
+  font-size: 1em;
+}
+
+#table-specifically-the-response-one tr td:nth-child(odd) {
+  flex: 1 1 30%;
+  margin-bottom: 3em;
+}
+
+tr {}
+
+#table-specifically-the-response-one tr {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+  margin-bottom: 3em;
+}
+
+#table-specifically-the-response-one tr td:nth-child(even) {
+  flex: 1 1 60%;
+  margin-top: 3em;
+}
+
+#table-specifically-the-response-one tr:nth-child(even) {
+  margin-right: 3em;
+}
+
+#table-specifically-the-response-one tr:nth-child(odd) {
+  margin-left: 3em;
+}
+
+#table-specifically-the-response-one td {
+  background-color: #3b526b88;
+  box-shadow: 0 1em #3b526b, inset 1em 1em #7695b622, inset -1em -1em #09152266;
+  border: 1px inset #fff4;
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  font-size: 0.8em;
+}
+
+#table-specifically-the-response-one canvas {
+  width: 250px;
+  height: 200px;
+  border: 4px inset #dddd;
+}
+
+#table-specifically-the-response-one img {
+  border: 4px inset #dddd;
 }
