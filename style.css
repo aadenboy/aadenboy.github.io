@@ -266,7 +266,7 @@ td img, th img {
 #canvas-layers {
   flex: 1 1 auto;
   align-items: left;
-  overflow-y: scroll;
+  overflow-y: auto;
   max-height: 200px;
 }
 #canvas-layers li {
