@@ -91,7 +91,7 @@ input[type="color"] {
   height: 2em;
   vertical-align: middle;
 }
-button, #canvas-tools li, #canvas-container .tecknar-container button, #canvas-container .tecknar-container .tecknar-toolbar li label {
+button, #canvas-tools li, #canvas-container .tecknar-container button, #canvas-container .tecknar-container .tecknar-toolbar li label, .tecknar-import-file {
   background: #fff8;
   border: 1px solid #fffc;
   color: #000;
