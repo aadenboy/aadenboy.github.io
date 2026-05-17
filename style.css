@@ -8,7 +8,6 @@ html, body {
   display: flex;
   justify-content: center;
   margin: 0 1em;
-  overflow-x: hidden;
 }
 body {
   background: #000a;
@@ -72,7 +71,7 @@ form {
   flex-direction: column;
   gap: 0.5em;
 }
-label {
+label:not(.tecknar-container label) {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -92,7 +91,7 @@ input[type="color"] {
   height: 2em;
   vertical-align: middle;
 }
-button, #canvas-tools li {
+button, #canvas-tools li, #canvas-container .tecknar-container button, #canvas-container .tecknar-container .tecknar-toolbar li label {
   background: #fff8;
   border: 1px solid #fffc;
   color: #000;
@@ -245,7 +244,6 @@ td img, th img {
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  &:has(input:)
 }
 #canvas-tools input {
   display: none;
@@ -329,4 +327,26 @@ main:has(#table-specifically-the-response-one) {
 
 #table-specifically-the-response-one img {
   border: 4px inset #dddd;
+}
+
+.tecknar-topbar {
+  background: none;
+  border-bottom-color: #fff;
+}
+
+.tecknar-canvasbar {
+  background: none;
+}
+
+.tecknar-container-middle {
+  background: none;
+}
+
+.tecknar-bottombar {
+  background: none;
+  border-top-color: #fff;
+}
+
+.tecknar-container {
+  background: none;
 }
