@@ -10,11 +10,11 @@ html, body {
   margin: 0 1em;
 }
 body {
-  background: #000a;
   display: block;
-  margin-top: calc(2.5em + 4px);
+  margin: calc(2.5em + 4px) 0;
 }
 main {
+  background: #000a;
   flex-direction: column;
   justify-content: center;
   padding: 1em;
@@ -61,6 +61,16 @@ nav > ul > li > a, nav > ul > li > span {
     box-shadow: none;
     transform: translateY(4px);
   }
+}
+footer {
+    display: flex;
+    height: 3em;
+    flex-wrap: wrap;
+    background: #000a;
+    color: #fff;
+    margin-top: 1em;
+    align-content: center;
+    justify-content: center;
 }
 
 h1 {
