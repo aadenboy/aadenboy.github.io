@@ -91,7 +91,7 @@ input[type="color"] {
   height: 2em;
   vertical-align: middle;
 }
-button, #canvas-tools li, #canvas-container .tecknar-container button, #canvas-container .tecknar-container .tecknar-toolbar li label, .tecknar-import-file {
+button, #canvas-tools li, #canvas-container .tecknar-container button, #canvas-container .tecknar-container .tecknar-toolbar li label, .tecknar-import-file, .sections label {
   background: #fff8;
   border: 1px solid #fffc;
   color: #000;
@@ -349,4 +349,30 @@ main:has(#table-specifically-the-response-one) {
 
 .tecknar-container {
   background: none;
+}
+
+.sections label input {
+    display: none;
+}
+
+.sections {
+    display: flex;
+    list-style: none;
+    margin: 1em 0;
+    padding: 0;
+}
+
+.sections:has([value="section-comic"]:not(:checked)) ~ #section-comic {
+    display: none;
+}
+
+.sections:has([value="section-bright"]:not(:checked)) ~ #section-bright {
+    display: none;
+}
+
+.sections:has([value="section-text"]:not(:checked)) ~ #section-text {
+    display: none;
+}
+.sections:has([value="section-explanation"]:not(:checked)) ~ #section-explanation {
+    display: none;
 }
