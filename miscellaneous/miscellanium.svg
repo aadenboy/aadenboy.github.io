@@ -1,0 +1,138 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+<metadata>
+Created by FontForge 20201107 at Mon Jun  8 13:59:51 2026
+ By Unknown
+ 
+</metadata>
+<defs>
+<font id="MISCMISC" horiz-adv-x="0" >
+  <font-face 
+    font-family="MISC"
+    font-weight="500"
+    font-stretch="normal"
+    units-per-em="1000"
+    panose-1="0 0 0 0 0 0 0 0 0 0"
+    ascent="800"
+    descent="-200"
+    x-height="230"
+    bbox="-30 -430 830 830"
+    underline-thickness="0"
+    underline-position="0"
+    unicode-range="U+0020-0078"
+  />
+<missing-glyph horiz-adv-x="600" 
+d="M-30 370h30h370v-140h-200v-60h260v260h-460v-60zM230 -30c-200 60 0 30 0 30v80h-60v-110s-140 60 60 0z" />
+    <glyph glyph-name=".notdef" horiz-adv-x="600" 
+d="M-30 370h30h370v-140h-200v-60h260v260h-460v-60zM230 -30c-200 60 0 30 0 30v80h-60v-110s-140 60 60 0z" />
+    <glyph glyph-name=" " unicode=" " horiz-adv-x="600" 
+ />
+    <glyph glyph-name="a" unicode="a" 
+d="M-30 370h30h230v60h-260v-60z" />
+    <glyph glyph-name="b" unicode="b" 
+d="M170 370h30h230v60h-260v-60z" />
+    <glyph glyph-name="c" unicode="c" 
+d="M-30 370h30h430v60h-460v-60z" />
+    <glyph glyph-name="d" unicode="d" 
+d="M-30 370h30h155v60h-185v-60zM245 370h30h155v60h-185v-60z" />
+    <glyph glyph-name="e" unicode="e" 
+d="M-30 170h30h230v60h-260v-60z" />
+    <glyph glyph-name="f" unicode="f" 
+d="M170 170h30h230v60h-260v-60z" />
+    <glyph glyph-name="g" unicode="g" 
+d="M-30 170h30h430v60h-460v-60z" />
+    <glyph glyph-name="h" unicode="h" 
+d="M-30 170h30h155v60h-185v-60zM245 170h30h155v60h-185v-60z" />
+    <glyph glyph-name="i" unicode="i" 
+d="M-30 -30h30h230v60h-260v-60z" />
+    <glyph glyph-name="j" unicode="j" 
+d="M170 -30h30h230v60h-260v-60z" />
+    <glyph glyph-name="k" unicode="k" 
+d="M-30 -30h30h430v60h-460v-60z" />
+    <glyph glyph-name="l" unicode="l" 
+d="M-30 -30h30h155v60h-185v-60zM245 -30h30h155v60h-185v-60z" />
+    <glyph glyph-name="m" unicode="m" 
+d="M-30 430v-30v-230h60v260h-60z" />
+    <glyph glyph-name="n" unicode="n" 
+d="M-30 230v-30v-230h60v260h-60z" />
+    <glyph glyph-name="o" unicode="o" 
+d="M-30 430v-30v-430h60v460h-60z" />
+    <glyph glyph-name="p" unicode="p" 
+d="M-30 430v-30v-155h60v185h-60zM-30 155v-30v-155h60v185h-60z" />
+    <glyph glyph-name="q" unicode="q" 
+d="M170 430v-30v-230h60v260h-60z" />
+    <glyph glyph-name="r" unicode="r" 
+d="M170 230v-30v-230h60v260h-60z" />
+    <glyph glyph-name="s" unicode="s" 
+d="M170 430v-30v-430h60v460h-60z" />
+    <glyph glyph-name="t" unicode="t" 
+d="M170 430v-30v-155h60v185h-60zM170 155v-30v-155h60v185h-60z" />
+    <glyph glyph-name="u" unicode="u" 
+d="M370 430v-30v-230h60v260h-60z" />
+    <glyph glyph-name="v" unicode="v" 
+d="M370 230v-30v-230h60v260h-60z" />
+    <glyph glyph-name="w" unicode="w" 
+d="M370 430v-30v-430h60v460h-60z" />
+    <glyph glyph-name="x" unicode="x" 
+d="M370 430v-30v-155h60v185h-60zM370 155v-30v-155h60v185h-60z" />
+    <glyph glyph-name="(" unicode="(" horiz-adv-x="200" 
+d="M30 -430v30v1170h200v60h-260v-1260h60z" />
+    <glyph glyph-name=")" unicode=")" horiz-adv-x="800" 
+d="M370 -430h30h230v1260h-60v-1200h-200v-60z" />
+    <glyph glyph-name="[" unicode="[" horiz-adv-x="400" 
+d="M30 -430v30v1170h140v-1200h60v1260h-260v-1260h60z" />
+    <glyph glyph-name="]" unicode="]" horiz-adv-x="1000" 
+d="M570 830v-30v-1230h260v1260h-60v-1200h-140v1200h-60z" />
+    <glyph glyph-name="A" unicode="A" 
+d="M-30 770h30h230v60h-260v-60z" />
+    <glyph glyph-name="B" unicode="B" 
+d="M170 770h30h230v60h-260v-60z" />
+    <glyph glyph-name="C" unicode="C" 
+d="M-30 770h30h430v60h-460v-60z" />
+    <glyph glyph-name="D" unicode="D" 
+d="M-30 770h30h155v60h-185v-60zM245 770h30h155v60h-185v-60z" />
+    <glyph glyph-name="E" unicode="E" 
+d="M-30 570h30h230v60h-260v-60z" />
+    <glyph glyph-name="F" unicode="F" 
+d="M170 570h30h230v60h-260v-60z" />
+    <glyph glyph-name="G" unicode="G" 
+d="M-30 570h30h430v60h-460v-60z" />
+    <glyph glyph-name="H" unicode="H" 
+d="M-30 570h30h155v60h-185v-60zM245 570h30h155v60h-185v-60z" />
+    <glyph glyph-name="I" unicode="I" 
+d="M-30 -230h30h230v60h-260v-60z" />
+    <glyph glyph-name="J" unicode="J" 
+d="M170 -230h30h230v60h-260v-60z" />
+    <glyph glyph-name="K" unicode="K" 
+d="M-30 -230h30h430v60h-460v-60z" />
+    <glyph glyph-name="L" unicode="L" 
+d="M-30 -230h30h155v60h-185v-60zM245 -230h30h155v60h-185v-60z" />
+    <glyph glyph-name="M" unicode="M" 
+d="M-30 -430h30h230v60h-260v-60z" />
+    <glyph glyph-name="N" unicode="N" 
+d="M170 -430h30h230v60h-260v-60z" />
+    <glyph glyph-name="O" unicode="O" 
+d="M-30 -430h30h430v60h-460v-60z" />
+    <glyph glyph-name="P" unicode="P" 
+d="M-30 -430h30h155v60h-185v-60zM245 -430h30h155v60h-185v-60z" />
+    <glyph glyph-name="Q" unicode="Q" 
+d="M30 570v30v230h-60v-260h60z" />
+    <glyph glyph-name="R" unicode="R" 
+d="M230 570v30v230h-60v-260h60z" />
+    <glyph glyph-name="S" unicode="S" 
+d="M430 570v30v230h-60v-260h60z" />
+    <glyph glyph-name="T" unicode="T" 
+d="M-30 -170v-30v-230h60v260h-60z" />
+    <glyph glyph-name="U" unicode="U" 
+d="M170 -170v-30v-230h60v260h-60z" />
+    <glyph glyph-name="V" unicode="V" 
+d="M370 -170v-30v-230h60v260h-60z" />
+    <glyph glyph-name="<" unicode="&#x3c;" horiz-adv-x="400" 
+d="M170 630v-30v-830h60v860h-60zM-30 170h30h230v60h-260v-60zM30 -430v30v1170h200v60h-260v-1260h60z" />
+    <glyph glyph-name=">" unicode="&#x3e;" horiz-adv-x="1000" 
+d="M570 630v-30v-830h60v860h-60zM570 170h30h230v60h-260v-60zM770 830v-30v-1170h-200v-60h260v1260h-60z" />
+    <glyph glyph-name="?" unicode="?" horiz-adv-x="600" 
+ />
+  </font>
+</defs></svg>
