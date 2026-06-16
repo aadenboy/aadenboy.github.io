@@ -1,0 +1,47 @@
+<html><head>
+    <title>youtube posts</title>
+    <meta charset="utf-8">
+    <style>
+      #postslist pre {
+          text-wrap: wrap;
+      }
+
+      #postslist tr:first-child {
+        position: sticky;
+      }
+
+      #postslist {
+          font-size: 14px;
+      }
+
+      #postslist img {
+          width: 300px;
+      }
+
+      td:nth-child(3) {
+          width: 10%;
+      }
+
+      #postslist td:has(img) {
+          width: 600px;
+      }
+
+      #postslist td:has(img ~ img) img {
+          width: auto;
+          max-width: 300px;
+          height: 150px;
+      }
+
+      #postslist td {
+          padding: 0.5em;
+          border: 1px solid #000;
+      }
+    </style>
+  </head>
+  <body>
+      <table id="postslist"><tbody><tr><th>Images</th><th>Content</th><th>Date</th><th>URL</th></tr>
+<!-- Archived post data goes here. -->
+</tbody></table>
+    
+  
+</body></html>
