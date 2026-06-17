@@ -1,0 +1,80 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+<metadata>
+Created by FontForge 20201107 at Wed Jun 17 05:48:25 2026
+ By Unknown
+ 
+</metadata>
+<defs>
+<font id="miscellanium2miscellanium2" horiz-adv-x="0" >
+  <font-face 
+    font-family="miscellanium2"
+    font-weight="500"
+    font-stretch="normal"
+    units-per-em="1000"
+    panose-1="0 0 0 0 0 0 0 0 0 0"
+    ascent="800"
+    descent="-200"
+    x-height="230"
+    bbox="-31 -31 431 431"
+    underline-thickness="0"
+    underline-position="0"
+    unicode-range="U+0020-007E"
+  />
+<missing-glyph horiz-adv-x="600" 
+d="M230 0c0 -17 -13 -30 -30 -30s-30 13 -30 30s13 30 30 30s30 -13 30 -30zM21 179v1l179 179l128 -128h-128c-17 0 -30 -13 -30 -30s13 -30 30 -30h200c27 0 40 32 21 51l-200 200c-12 12 -31 12 -43 0l-200 -200c-12 -12 -12 -31 0 -43s31 -12 43 0z" />
+    <glyph glyph-name=".notdef" horiz-adv-x="600" 
+d="M230 0c0 -17 -13 -30 -30 -30s-30 13 -30 30s13 30 30 30s30 -13 30 -30zM21 179v1l179 179l128 -128h-128c-17 0 -30 -13 -30 -30s13 -30 30 -30h200c27 0 40 32 21 51l-200 200c-12 12 -31 12 -43 0l-200 -200c-12 -12 -12 -31 0 -43s31 -12 43 0z" />
+    <glyph glyph-name="a" unicode="a" 
+d="M-21 379l200 -200c12 -12 31 -12 43 0s12 31 0 43l-200 200c-12 12 -31 12 -43 0s-12 -31 0 -43z" />
+    <glyph glyph-name="b" unicode="b" 
+d="M170 400v-200c0 -17 13 -30 30 -30s30 13 30 30v200c0 17 -13 30 -30 30s-30 -13 -30 -30z" />
+    <glyph glyph-name="c" unicode="c" 
+d="M379 421l-200 -200c-12 -12 -12 -31 0 -43s31 -12 43 0l200 200c12 12 12 31 0 43s-31 12 -43 0z" />
+    <glyph glyph-name="d" unicode="d" 
+d="M400 230h-200c-17 0 -30 -13 -30 -30s13 -30 30 -30h200c17 0 30 13 30 30s-13 30 -30 30z" />
+    <glyph glyph-name="e" unicode="e" 
+d="M421 21l-200 200c-12 12 -31 12 -43 0s-12 -31 0 -43l200 -200c12 -12 31 -12 43 0s12 31 0 43z" />
+    <glyph glyph-name="f" unicode="f" 
+d="M230 0v200c0 17 -13 30 -30 30s-30 -13 -30 -30v-200c0 -17 13 -30 30 -30s30 13 30 30z" />
+    <glyph glyph-name="g" unicode="g" 
+d="M21 -21l200 200c12 12 12 31 0 43s-31 12 -43 0l-200 -200c-12 -12 -12 -31 0 -43s31 -12 43 0z" />
+    <glyph glyph-name="h" unicode="h" 
+d="M0 170h200c17 0 30 13 30 30s-13 30 -30 30h-200c-17 0 -30 -13 -30 -30s13 -30 30 -30z" />
+    <glyph glyph-name="i" unicode="i" 
+d="M0 370h200c17 0 30 13 30 30s-13 30 -30 30h-200c-17 0 -30 -13 -30 -30s13 -30 30 -30z" />
+    <glyph glyph-name="j" unicode="j" 
+d="M200 370h200c17 0 30 13 30 30s-13 30 -30 30h-200c-17 0 -30 -13 -30 -30s13 -30 30 -30z" />
+    <glyph glyph-name="k" unicode="k" 
+d="M370 400v-200c0 -17 13 -30 30 -30s30 13 30 30v200c0 17 -13 30 -30 30s-30 -13 -30 -30z" />
+    <glyph glyph-name="l" unicode="l" 
+d="M370 200v-200c0 -17 13 -30 30 -30s30 13 30 30v200c0 17 -13 30 -30 30s-30 -13 -30 -30z" />
+    <glyph glyph-name="m" unicode="m" 
+d="M400 30h-200c-17 0 -30 -13 -30 -30s13 -30 30 -30h200c17 0 30 13 30 30s-13 30 -30 30z" />
+    <glyph glyph-name="n" unicode="n" 
+d="M200 30h-200c-17 0 -30 -13 -30 -30s13 -30 30 -30h200c17 0 30 13 30 30s-13 30 -30 30z" />
+    <glyph glyph-name="o" unicode="o" 
+d="M30 0v200c0 17 -13 30 -30 30s-30 -13 -30 -30v-200c0 -17 13 -30 30 -30s30 13 30 30z" />
+    <glyph glyph-name="p" unicode="p" 
+d="M30 200v200c0 17 -13 30 -30 30s-30 -13 -30 -30v-200c0 -17 13 -30 30 -30s30 13 30 30z" />
+    <glyph glyph-name="q" unicode="q" 
+d="M179 421l-200 -200c-12 -12 -12 -31 0 -43s31 -12 43 0l200 200c12 12 12 31 0 43s-31 12 -43 0z" />
+    <glyph glyph-name="r" unicode="r" 
+d="M421 221l-200 200c-12 12 -31 12 -43 0s-12 -31 0 -43l200 -200c12 -12 31 -12 43 0s12 31 0 43z" />
+    <glyph glyph-name="s" unicode="s" 
+d="M221 -21l200 200c12 12 12 31 0 43s-31 12 -43 0l-200 -200c-12 -12 -12 -31 0 -43s31 -12 43 0z" />
+    <glyph glyph-name=" " unicode=" " horiz-adv-x="600" 
+ />
+    <glyph glyph-name="_" unicode="_" horiz-adv-x="600" 
+ />
+    <glyph glyph-name="-" unicode="-" horiz-adv-x="200" 
+ />
+    <glyph glyph-name="`" unicode="`" horiz-adv-x="600" 
+ />
+    <glyph glyph-name="t" unicode="t" 
+d="M221 21l-200 200c-12 12 -31 12 -43 0s-12 -31 0 -43l200 -200c12 -12 31 -12 43 0s12 31 0 43z" />
+    <glyph glyph-name="~" unicode="~" horiz-adv-x="400" 
+ />
+  </font>
+</defs></svg>
