@@ -1,5 +1,5 @@
 -- this is messily written but whatever
-local last = io.open("eotlast", "r")
+local last = io.open("/hackenv/tmp/eotlast", "r")
 local u = os.time()
 local lt = tonumber(last:read("*n"))
 last:close()
@@ -27,6 +27,6 @@ print(
         d(f, np)
     )
 )
-last = io.open("eotlast", "w")
+last = io.open("/hackenv/tmp/eotlast", "w")
 last:write(tostring(u))
 last:close()
