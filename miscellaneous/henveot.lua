@@ -2,7 +2,7 @@
 local last = io.open("/hackenv/tmp/eotlast", "r")
 local u = os.time()
 local lt = last and tonumber(last:read("*n"))
-last:close()
+if last then last:close() end
 local f = "!%H:%M:%S, %d %b %Y"
 local np = math.floor(math.ceil(u/2147483647*100)/100*(2^31-1))
 local pdiff = np-u
