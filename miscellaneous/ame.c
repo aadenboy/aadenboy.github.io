@@ -4,6 +4,8 @@
 #include <stdlib.h>
 #include "bn.c"
 
+FILE *primes;
+
 // https://stackoverflow.com/a/8534275
 char *strrev(char *str) {
     char *p1, *p2;
@@ -71,6 +73,7 @@ void printnum(struct bn* num) {
         }
         numstr[len++] = bignum_to_int(&digit) + '0';
     }
+    numstr[len] = '\0';
     printf("%s", strrev(numstr));
     free(numstr);
 }
@@ -88,55 +91,137 @@ int main(int argc, char *argv[])
     char *smode = argv[1];
     char *sbase = argv[2];
 
-    struct bn base;
-    bool validbase = base10num(sbase, &base);
-    int basecomp = validbase ? bignum_cmp(&base, &one) : SMALLER;
-    if (basecomp != LARGER) {
-        fprintf(stderr, "Argument 2 must be a valid integer greater than one");
-        return 1;
-    }
-
-    if (strcmp(smode, "from") == 0) {
-        char *sarray = argv[3];
-        
-        struct bn array;
-        bool validarray = base10num(sarray, &array);
-        if (!validarray) {
-            fprintf(stderr, "Argument 3 must be a valid integer greater than or equal to zero");
+    if (strcmp(sbase, "primes") != 0) { // aAME
+        struct bn base;
+        bool validbase = base10num(sbase, &base);
+        int basecomp = validbase ? bignum_cmp(&base, &one) : SMALLER;
+        if (basecomp != LARGER) {
+            fprintf(stderr, "Argument 2 must be an integer greater than 1");
             return 1;
         }
 
-        struct bn tmp;
-        struct bn digit;
-        bool iszero = bignum_is_zero(&array);
-        while (!iszero) {
-            bignum_divmod(&array, &base, &tmp, &digit);
-            bignum_assign(&array, &tmp);
-            iszero = bignum_is_zero(&array);
-            printnum(&digit);
-            if (!iszero) printf(" ");
-        }
-    } else if (strcmp(smode, "to") == 0) {
-        struct bn array;
-        bignum_init(&array);
-        
-        struct bn tmp;
-        struct bn digit;
-        bignum_init(&tmp);
-        bignum_init(&digit);
-        bool validdigit = true;
-        int digitcomp = SMALLER;
-        for (int i = argc-1; i >= 3; i--) {
-            validdigit = base10num(argv[i], &digit);
-            digitcomp = validdigit ? bignum_cmp(&digit, &base) : LARGER;
-            if (digitcomp != SMALLER) {
-                fprintf(stderr, "Argument %d must be a valid integer greater than or equal to zero and less than the base", i);
+        if (strcmp(smode, "from") == 0) {
+            char *sarray = argv[3];
+            
+            struct bn array;
+            bool validarray = base10num(sarray, &array);
+            if (!validarray) {
+                fprintf(stderr, "Argument 3 must be a non-negative integer");
                 return 1;
             }
-            bignum_mul(&array, &base, &tmp);
-            bignum_add(&tmp, &digit, &array);
+
+            struct bn tmp;
+            struct bn digit;
+            bool iszero = bignum_is_zero(&array);
+            while (!iszero) {
+                bignum_divmod(&array, &base, &tmp, &digit);
+                bignum_assign(&array, &tmp);
+                iszero = bignum_is_zero(&array);
+                printnum(&digit);
+                if (!iszero) printf(" ");
+            }
+        } else if (strcmp(smode, "to") == 0) {
+            struct bn array;
+            bignum_init(&array);
+            
+            struct bn tmp;
+            struct bn digit;
+            bignum_init(&tmp);
+            bignum_init(&digit);
+            bool validdigit = true;
+            int digitcomp = SMALLER;
+            for (int i = argc-1; i >= 3; i--) {
+                validdigit = base10num(argv[i], &digit);
+                digitcomp = validdigit ? bignum_cmp(&digit, &base) : LARGER;
+                if (digitcomp != SMALLER) {
+                    fprintf(stderr, "Argument %d must be a non-negative integer less than the given base", i);
+                    return 1;
+                }
+                bignum_mul(&array, &base, &tmp);
+                bignum_add(&tmp, &digit, &array);
+            }
+            printnum(&array);
         }
-        printnum(&array);
+    } else { // mAME
+        primes = fopen("smallprimes.txt", "r");
+        if (primes == NULL) {
+            fprintf(stderr, "smallprimes.txt is missing");
+            return 1;
+        }
+        
+        if (strcmp(smode, "from") == 0) {
+            char *sarray = argv[3];
+            
+            struct bn array;
+            bool validarray = base10num(sarray, &array);
+            if (!validarray) {
+                fprintf(stderr, "Argument 3 must be a valid integer greater than or equal to zero");
+                return 1;
+            }
+
+            int prime;
+            struct bn primebn;
+            if (fscanf(primes, "%d", &prime) == 0) {
+                fprintf(stderr, "Ran out of primes");
+                return 1;
+            }
+            bignum_from_int(&primebn, prime);
+            struct bn tmp;
+            struct bn mod;
+            struct bn digit;
+            bool first = true;
+            bignum_init(&digit);
+            bool arraycomp = bignum_cmp(&array, &one);
+            while (arraycomp == LARGER) {
+                bignum_divmod(&array, &primebn, &tmp, &mod);
+                if (bignum_is_zero(&mod)) {
+                    bignum_inc(&digit);
+                    bignum_assign(&array, &tmp);
+                } else {
+                    if (!first) printf(" ");
+                    printnum(&digit);
+                    bignum_init(&digit);
+                    first = false;
+                    arraycomp = bignum_cmp(&array, &one);
+                    if (arraycomp == LARGER && fscanf(primes, "%d", &prime) != 1) {
+                        fprintf(stderr, "Ran out of primes");
+                        return 1;
+                    }
+                    bignum_from_int(&primebn, prime);
+                }
+            }
+        } else {
+            struct bn array;
+            bignum_assign(&array, &one);
+
+            int prime;
+            struct bn primebn;
+            struct bn tmp;
+            struct bn digit;
+            bignum_init(&tmp);
+            bignum_init(&digit);
+            bool validdigit = true;
+            for (int i = 3; i < argc; i++) {
+                validdigit = base10num(argv[i], &digit);
+                if (!validdigit) {
+                    fprintf(stderr, "Argument %d must be a non-negative integer less than the given base", i);
+                    return 1;
+                }
+                
+                if (fscanf(primes, "%d", &prime) == 0) {
+                    fprintf(stderr, "Ran out of primes");
+                    return 1;
+                }
+                bignum_from_int(&primebn, prime);
+
+                while (!bignum_is_zero(&digit)) {
+                    bignum_dec(&digit);
+                    bignum_mul(&array, &primebn, &tmp);
+                    bignum_assign(&array, &tmp);
+                }
+            }
+            printnum(&array);
+        }
     }
 
     return 0;
