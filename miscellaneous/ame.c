@@ -6,6 +6,13 @@
 
 FILE *primes;
 
+void eassert(bool cond, char *err) {
+    if (!cond) {
+        fprintf(stderr, "%s", err);
+        exit(1);
+    }
+}
+
 // https://stackoverflow.com/a/8534275
 char *strrev(char *str) {
     char *p1, *p2;
@@ -65,10 +72,7 @@ void printnum(struct bn* num) {
         if (len + 1 >= buf) {
             buf *= 2;
             renumstr = realloc(numstr, buf);
-            if (renumstr == NULL) {
-                fprintf(stderr, "Could not reallocate");
-                exit(1);
-            }
+            eassert(renumstr != NULL, "Could not reallocate\n");
             numstr = renumstr;
         }
         numstr[len++] = bignum_to_int(&digit) + '0';
@@ -80,10 +84,7 @@ void printnum(struct bn* num) {
 
 int main(int argc, char *argv[])
 {
-    if (argc < 3) {
-        fprintf(stderr, "Usage: from <base> <array>, to <base> <num1> [num2] ...");
-        return 1;
-    }
+    eassert(argc >= 4, "Usage: from <base> <array>, to <base> <num1> [num2] ...\n");
 
     struct bn one;
     bignum_from_int(&one, 1);
@@ -95,20 +96,14 @@ int main(int argc, char *argv[])
         struct bn base;
         bool validbase = base10num(sbase, &base);
         int basecomp = validbase ? bignum_cmp(&base, &one) : SMALLER;
-        if (basecomp != LARGER) {
-            fprintf(stderr, "Argument 2 must be an integer greater than 1");
-            return 1;
-        }
+        eassert(basecomp == LARGER, "Argument 2 must be an integer greater than 1\n");
 
         if (strcmp(smode, "from") == 0) {
             char *sarray = argv[3];
             
             struct bn array;
             bool validarray = base10num(sarray, &array);
-            if (!validarray) {
-                fprintf(stderr, "Argument 3 must be a non-negative integer");
-                return 1;
-            }
+            eassert(validarray, "Argument 3 must be a non-negative integer\n");
 
             struct bn tmp;
             struct bn digit;
@@ -133,10 +128,7 @@ int main(int argc, char *argv[])
             for (int i = argc-1; i >= 3; i--) {
                 validdigit = base10num(argv[i], &digit);
                 digitcomp = validdigit ? bignum_cmp(&digit, &base) : LARGER;
-                if (digitcomp != SMALLER) {
-                    fprintf(stderr, "Argument %d must be a non-negative integer less than the given base", i);
-                    return 1;
-                }
+                eassert(digitcomp == SMALLER, "All digits must be a non-negative integer less than the given base\n");
                 bignum_mul(&array, &base, &tmp);
                 bignum_add(&tmp, &digit, &array);
             }
@@ -144,27 +136,18 @@ int main(int argc, char *argv[])
         }
     } else { // mAME
         primes = fopen("smallprimes.txt", "r");
-        if (primes == NULL) {
-            fprintf(stderr, "smallprimes.txt is missing");
-            return 1;
-        }
+        eassert(primes != NULL, "smallprimes.txt is missing\n");
         
         if (strcmp(smode, "from") == 0) {
             char *sarray = argv[3];
             
             struct bn array;
             bool validarray = base10num(sarray, &array);
-            if (!validarray) {
-                fprintf(stderr, "Argument 3 must be a valid integer greater than or equal to zero");
-                return 1;
-            }
+            eassert(validarray, "Argument 3 must be a valid integer greater than or equal to zero\n");
 
             int prime;
             struct bn primebn;
-            if (fscanf(primes, "%d", &prime) == 0) {
-                fprintf(stderr, "Ran out of primes");
-                return 1;
-            }
+            eassert(fscanf(primes, "%d", &prime) == 1, "Ran out of primes\n");
             bignum_from_int(&primebn, prime);
             struct bn tmp;
             struct bn mod;
@@ -183,10 +166,7 @@ int main(int argc, char *argv[])
                     bignum_init(&digit);
                     first = false;
                     arraycomp = bignum_cmp(&array, &one);
-                    if (arraycomp == LARGER && fscanf(primes, "%d", &prime) != 1) {
-                        fprintf(stderr, "Ran out of primes");
-                        return 1;
-                    }
+                    eassert(arraycomp != LARGER || fscanf(primes, "%d", &prime) == 1, "Ran out of primes\n");
                     bignum_from_int(&primebn, prime);
                 }
             }
@@ -203,15 +183,10 @@ int main(int argc, char *argv[])
             bool validdigit = true;
             for (int i = 3; i < argc; i++) {
                 validdigit = base10num(argv[i], &digit);
-                if (!validdigit) {
-                    fprintf(stderr, "Argument %d must be a non-negative integer less than the given base", i);
-                    return 1;
-                }
-                
-                if (fscanf(primes, "%d", &prime) == 0) {
-                    fprintf(stderr, "Ran out of primes");
-                    return 1;
-                }
+                eassert(validdigit, "All digits must be a non-negative integer\n");
+
+                eassert(fscanf(primes, "%d", &prime) == 1, "Ran out of primes\n");
+
                 bignum_from_int(&primebn, prime);
 
                 while (!bignum_is_zero(&digit)) {
@@ -222,7 +197,9 @@ int main(int argc, char *argv[])
             }
             printnum(&array);
         }
+        fclose(primes);
     }
+    printf("\n");
 
     return 0;
 }
