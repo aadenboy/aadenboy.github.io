@@ -98,11 +98,12 @@ struct bn* val2(int value) {
 }
 
 struct bn* c_get(struct bn* index, int deref) { // left side of commands has implicit first dereference
-    if (deref == 0) return index;
-    struct bn* counter = &zero;
-    if (cmp(index, &bn_csize) == SMALLER) counter = &counters[to_int(index)];
-    if (counter == NULL) counter = &zero;
-    return c_get(counter, --deref);
+    struct bn* counter = index;
+    for (int i = 0; i < deref; i++) {
+        if (cmp(counter, &bn_csize) == SMALLER) counter = &counters[to_int(counter)];
+        if (counter == NULL) counter = &zero;
+    }
+    return counter;
 }
 void c_add(struct bn* index, struct bn* amount) {
     int presize = csize;
